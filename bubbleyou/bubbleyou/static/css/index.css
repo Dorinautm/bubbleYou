@@ -11,16 +11,15 @@ body, html {
 
 /* Create a Parallax Effect */
 .bgimg-1 {
+  background-image:url("https://www.w3schools.com/w3images/mist.jpg");
+  min-height: 100%;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.bgimg-1 {
-  background-image: url('https://www.pwp.tw/wp-content/uploads/2016/03/parallax5.jpg');
-  min-height: 100%;
-}
+
 @media only screen and (max-device-width: 1600px) {
   .bgimg-1 {
     background-attachment: scroll;

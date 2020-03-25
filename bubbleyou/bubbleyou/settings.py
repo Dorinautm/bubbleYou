@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "crispy_forms",
+    'register.apps.RegisterConfig',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +61,7 @@ ROOT_URLCONF = 'bubbleyou.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates',],
+        'DIRS': ['bubbleyou/templates', 'register/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,3 +125,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+CRISPY_TEMPLATE_PACK="bootstrap4"
+LOGIN_REDIRECT_URL = "/header"
+LOGOUT_REDIRECT_URL = "/logout"
+
+EMAIL_BACKEND="sendgrid_backend.SendgridBackend"
+SENDGRID_API_KEY='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'
+SENDGRID_SANDBOX_MODE_IN_DEBUG=False
