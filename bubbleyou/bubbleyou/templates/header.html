@@ -17,15 +17,39 @@
 
 <div class="w3-top">
   <div class="w3-bar" id="myNavbar">
+    {% if user.is_authenticated %}
+      {% if user.is_superuser %}
+
+      <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+      </a>
+      <a href="/header" class="w3-bar-item w3-button">HOME</a>
+      <a href="/post_list" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ALL POSTS</a>
+      <a href="/posts" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> NEWEST</a>
+      <a href="/contacts" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+      <a class="w3-bar-item w3-button w3-hover-red" href="/logout" >Log out</a>
+      <a class="w3-bar-item w3-button button5" href="/admin" >AdminPanel</a>
+
+    {%else%}
     <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
       <i class="fa fa-bars"></i>
-    </a>
+      </a>
+      <a href="/header" class="w3-bar-item w3-button">HOME</a>
+      <a href="/post_list" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ALL POSTS</a>
+      <a href="/posts" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> NEWEST</a>
+      <a href="/contacts" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+      <a class="w3-bar-item w3-button w3-hover-red" href="/logout" >Log out</a>
+    {%endif%}
+
+
+    {%else%}
     <a href="/header" class="w3-bar-item w3-button">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
     <a href="/posts" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> NEWEST</a>
     <a href="/contacts" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
-      <a class="w3-bar-item w3-button w3-hover-red" href="/signup" onclick="toggleFunction()">REGISTER</a>
+    <a class="w3-bar-item w3-button w3-hover-red" href="/signup" onclick="toggleFunction()">REGISTER</a>
     <a class="w3-bar-item w3-button w3-hover-red" href="/login" onclick="toggleFunction()">Log in</a>
+
+    {%endif%}
   </div>
 </div>
 

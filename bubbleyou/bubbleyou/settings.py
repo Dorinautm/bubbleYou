@@ -42,8 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "crispy_forms",
+    'crispy_forms',
     'register.apps.RegisterConfig',
+    'comments.apps.CommentsConfig',
 ]
 
 MIDDLEWARE = [
@@ -61,7 +62,7 @@ ROOT_URLCONF = 'bubbleyou.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['bubbleyou/templates', 'register/templates'],
+        'DIRS': ['bubbleyou/templates', 'register/templates','comments/templates',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -127,7 +128,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 CRISPY_TEMPLATE_PACK="bootstrap4"
 LOGIN_REDIRECT_URL = "/header"
-LOGOUT_REDIRECT_URL = "/logout"
+LOGOUT_REDIRECT_URL = "/header"
 
 EMAIL_BACKEND="sendgrid_backend.SendgridBackend"
 SENDGRID_API_KEY='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'

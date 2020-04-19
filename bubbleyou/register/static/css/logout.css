@@ -1,2 +1,5 @@
 body{
-background:url("https://www.loveisrespect.org/wp-content/uploads/2016/02/respect-boundaries-734x283.jpg");}
+background:url("https://www.loveisrespect.org/wp-content/uploads/2016/02/respect-boundaries-734x283.jpg");
+background-size:100%;
+background-repeat:no-repeat;
+}

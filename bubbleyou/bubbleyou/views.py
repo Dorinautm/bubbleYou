@@ -22,7 +22,7 @@ def contacts(request):
             try:
                 send_mail(subject, message,sender,recipients,fail_silently=False)
             except BadHeaderError:
-                return HttpResponse('Invalidule')
+                return HttpResponse('Try again')
             return HttpResponse('woohoo you did it...')
 
     return render(request, 'contacts.html',{'form':form})
@@ -31,5 +31,7 @@ def posts(request):
     return render(request, 'posts.html')
 def login(request):
     return render(request, 'login.html')
+def logout(request):
+    return render(request, 'logout.html')
 
 
